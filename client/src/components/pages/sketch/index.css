@@ -1,0 +1,31 @@
+.board{
+    background-color: #fff;
+}
+.card{
+    background: #FAFAFA;
+    border: 1px solid #E2E2E2;
+    border-radius: 4px;
+    padding: 10px;
+}
+.sketches{
+    position: absolute;
+    z-index: 1000;
+    right: 0%;
+    top: 20%;
+    padding: 30px;
+    min-width: 20%;
+
+}
+
+.active{
+    color: #4F00C1;
+}
+
+.collaborators{
+    position: absolute;
+    z-index: 1000;
+    right: 0%;
+    top: 50%;
+    padding: 30px;
+    min-width: 20%;
+}

@@ -1,0 +1,26 @@
+.primary-button{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    background-color: #4F00C1;
+    border: none;
+    cursor: pointer;
+    color: #FFFFFF;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 700;
+}
+
+.secondary-button{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #E2E2E2;
+    border-radius: 3px;
+    background-color: transparent;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    color: #5D5D5D;
+}

@@ -1,0 +1,12 @@
+.primary-input{
+  
+    border: 1px solid #9F9F9F;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.err{
+    color: red;
+    font-size: 12px;
+    margin-bottom: 10px;
+}

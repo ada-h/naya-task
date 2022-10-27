@@ -1,0 +1,40 @@
+
+@font-face {
+  font-family: RandRegular;
+  src: url(../public/font/Rand-Regular.woff);
+}
+
+body {
+  margin: 0;
+  font-family: RandRegular, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* background: #F5F5F5; */
+}
+
+p{
+  margin-bottom: 0px;
+}
+.primary-color{
+  color: #4F00C1;
+}
+
+.t-12{
+  font-size: 12px;
+}
+
+.t-center{
+  text-align: center;
+}
+
+a{
+  text-decoration: none;
+  color: #4F00C1 !important;
+}
+
+.d-flex{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  gap: 10px;
+}
