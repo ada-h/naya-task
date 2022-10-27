@@ -38,14 +38,14 @@ const Canvas = () => {
     const context = canvas.getContext("2d");
     context.scale(2, 2);
     context.lineCap = "round";
-    context.fillStyle = "#fefefe";
     context.strokeStyle = "black";
-    context.lineWidth = 3;
+    context.lineWidth = 2;
     contextRef.current = context;
   }, []);
 
   return (
     <canvas
+      className="board"
       onMouseDown={onMouseDown}
       onMouseUp={onMouseUp}
       onMouseMove={draw}

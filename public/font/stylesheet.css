@@ -1,0 +1,182 @@
+@font-face {
+    font-family: 'Rand';
+    src: url('Rand-Regular.eot');
+    src: local('Rand Regular'), local('Rand-Regular'),
+        url('Rand-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Rand-Regular.woff2') format('woff2'),
+        url('Rand-Regular.woff') format('woff'),
+        url('Rand-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rand';
+    src: url('Rand-Heavy.eot');
+    src: local('Rand Heavy'), local('Rand-Heavy'),
+        url('Rand-Heavy.eot?#iefix') format('embedded-opentype'),
+        url('Rand-Heavy.woff2') format('woff2'),
+        url('Rand-Heavy.woff') format('woff'),
+        url('Rand-Heavy.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rand';
+    src: url('Rand-Bold.eot');
+    src: local('Rand Bold'), local('Rand-Bold'),
+        url('Rand-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Rand-Bold.woff2') format('woff2'),
+        url('Rand-Bold.woff') format('woff'),
+        url('Rand-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rand';
+    src: url('Rand-RegularItalic.eot');
+    src: local('Rand Regular Italic'), local('Rand-RegularItalic'),
+        url('Rand-RegularItalic.eot?#iefix') format('embedded-opentype'),
+        url('Rand-RegularItalic.woff2') format('woff2'),
+        url('Rand-RegularItalic.woff') format('woff'),
+        url('Rand-RegularItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rand';
+    src: url('Rand-Thin.eot');
+    src: local('Rand Thin'), local('Rand-Thin'),
+        url('Rand-Thin.eot?#iefix') format('embedded-opentype'),
+        url('Rand-Thin.woff2') format('woff2'),
+        url('Rand-Thin.woff') format('woff'),
+        url('Rand-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rand';
+    src: url('Rand-ThinItalic.eot');
+    src: local('Rand Thin Italic'), local('Rand-ThinItalic'),
+        url('Rand-ThinItalic.eot?#iefix') format('embedded-opentype'),
+        url('Rand-ThinItalic.woff2') format('woff2'),
+        url('Rand-ThinItalic.woff') format('woff'),
+        url('Rand-ThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rand';
+    src: url('Rand-LightItalic.eot');
+    src: local('Rand Light Italic'), local('Rand-LightItalic'),
+        url('Rand-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('Rand-LightItalic.woff2') format('woff2'),
+        url('Rand-LightItalic.woff') format('woff'),
+        url('Rand-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rand';
+    src: url('Rand-Medium.eot');
+    src: local('Rand Medium'), local('Rand-Medium'),
+        url('Rand-Medium.eot?#iefix') format('embedded-opentype'),
+        url('Rand-Medium.woff2') format('woff2'),
+        url('Rand-Medium.woff') format('woff'),
+        url('Rand-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rand';
+    src: url('Rand-HeavyItalic.eot');
+    src: local('Rand Heavy Italic'), local('Rand-HeavyItalic'),
+        url('Rand-HeavyItalic.eot?#iefix') format('embedded-opentype'),
+        url('Rand-HeavyItalic.woff2') format('woff2'),
+        url('Rand-HeavyItalic.woff') format('woff'),
+        url('Rand-HeavyItalic.ttf') format('truetype');
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rand';
+    src: url('Rand-Light.eot');
+    src: local('Rand Light'), local('Rand-Light'),
+        url('Rand-Light.eot?#iefix') format('embedded-opentype'),
+        url('Rand-Light.woff2') format('woff2'),
+        url('Rand-Light.woff') format('woff'),
+        url('Rand-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rand';
+    src: url('Rand-MediumItalic.eot');
+    src: local('Rand Medium Italic'), local('Rand-MediumItalic'),
+        url('Rand-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('Rand-MediumItalic.woff2') format('woff2'),
+        url('Rand-MediumItalic.woff') format('woff'),
+        url('Rand-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rand';
+    src: url('Rand-BoldItalic.eot');
+    src: local('Rand Bold Italic'), local('Rand-BoldItalic'),
+        url('Rand-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('Rand-BoldItalic.woff2') format('woff2'),
+        url('Rand-BoldItalic.woff') format('woff'),
+        url('Rand-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rand';
+    src: url('Rand-BlackItalic.eot');
+    src: local('Rand Black Italic'), local('Rand-BlackItalic'),
+        url('Rand-BlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('Rand-BlackItalic.woff2') format('woff2'),
+        url('Rand-BlackItalic.woff') format('woff'),
+        url('Rand-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rand';
+    src: url('Rand-Black.eot');
+    src: local('Rand Black'), local('Rand-Black'),
+        url('Rand-Black.eot?#iefix') format('embedded-opentype'),
+        url('Rand-Black.woff2') format('woff2'),
+        url('Rand-Black.woff') format('woff'),
+        url('Rand-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
