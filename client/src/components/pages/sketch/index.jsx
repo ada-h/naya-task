@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
 
@@ -6,6 +7,9 @@ import Nav from "../../reusables/nav";
 import "./index.css";
 
 const Board = () => {
+  const [showSketch, toggleSketch] = useState(false);
+  const [showCollaborators, toggleCollaborators] = useState(false);
+
   const auth = useSelector((state) => state.UserReducer.auth);
   const user = useSelector((state) => state.UserReducer.user);
 
@@ -23,26 +27,45 @@ const Board = () => {
           <div className="sketches card">
             <div className="header">
               <p> SKETCHES</p>
+              <div onClick={() => toggleSketch(!showSketch)}>
+                <img
+                  src="https://cdn0.iconfinder.com/data/icons/glyphpack/26/double-arrow-down-1024.png"
+                  alt="double caret down"
+                  height="10px"
+                />
+              </div>
             </div>
-            <ul>
-              <li> Sketch 1</li>
-              <li> Sketch 2</li>
-              <li className="active"> Sketch 3</li>
-            </ul>
+            {showSketch ? (
+              <ul>
+                <li> Sketch 1</li>
+                <li> Sketch 2</li>
+                <li className="active"> Sketch 3</li>
+              </ul>
+            ) : null}
+
             <p className="add"> + Add new sketch</p>
           </div>
           <div className="collaborators card">
-            <div>
+            <div className="header">
               <p> USERS</p>
+              <div onClick={() => toggleCollaborators(!showCollaborators)}>
+                <img
+                  src="https://cdn0.iconfinder.com/data/icons/glyphpack/26/double-arrow-down-1024.png"
+                  alt="double caret down"
+                  height="10px"
+                />
+              </div>
             </div>
-            <ul>
-              <li> Collaborator 1</li>
-              <li> Collaborator 2</li>
-              <li className="active">
-                {" "}
-                {user.firstname + " " + user.lastname}
-              </li>
-            </ul>
+            {showCollaborators ? (
+              <ul>
+                <li> Collaborator 1</li>
+                <li> Collaborator 2</li>
+                <li className="active">
+                  {" "}
+                  {user.firstname + " " + user.lastname}
+                </li>
+              </ul>
+            ) : null}
           </div>
           <div className="settings">
             <ul>

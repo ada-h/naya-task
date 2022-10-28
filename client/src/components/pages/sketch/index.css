@@ -11,7 +11,7 @@
   position: absolute;
   z-index: 1000;
   right: 0%;
-  top: 20%;
+  top: 9%;
   padding: 30px;
   min-width: 20%;
 
@@ -104,6 +104,10 @@ input:checked + .slider:before {
 }  
 
 .header{
-  background-color: #f5f5f5;
-  border: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+
 }
