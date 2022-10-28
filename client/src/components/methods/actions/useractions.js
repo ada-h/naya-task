@@ -1,6 +1,7 @@
 import _const from "../constants";
 import axios from "axios";
 import config from "../config";
+import { toast } from "react-toastify";
 
 //Register a user
 export const registerUser = (data) => {
@@ -12,7 +13,6 @@ export const registerUser = (data) => {
     axios
       .post(config.apiUrl + `/register`, data)
       .then((res) => {
-        console.log(res, "i am the res here");
         dispatch({
           type: _const.CREATING_USER,
           payload: false,
@@ -21,6 +21,7 @@ export const registerUser = (data) => {
           type: _const.USER_CREATED,
           payload: res.data.data,
         });
+        toast("User created successfully!");
       })
       .catch((err) => {
         dispatch({

@@ -40,6 +40,7 @@ module.exports = {
         lastname: req.body.lastname,
         email: req.body.email,
         password: req.body.password,
+        color: config.uniqueColorGenerator(Math.random(1, 1000)),
       });
 
       User.save(function (err, User) {

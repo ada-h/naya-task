@@ -9,10 +9,10 @@ var UserSchema = new Schema({
   username: String,
   firstname: String,
   lastname: String,
+  color: String,
   password: { type: String, select: false },
   sketches: [{ type: Schema.Types.ObjectId, ref: "Sketches" }],
   collaborations: [{ type: Schema.Types.ObjectId, ref: "Sketches" }],
-  color: String,
 });
 
 // hash the password before the user is saved

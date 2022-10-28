@@ -8,4 +8,8 @@ router.post("/register", userController.register);
 //Login to account
 router.post("/login", userController.login);
 
+//Forgot password
+
+//Google authentication flow
+
 module.exports = router;

@@ -38,3 +38,8 @@ a{
   align-content: center;
   gap: 10px;
 }
+
+li{
+  list-style: none;
+  padding: 5px;
+}

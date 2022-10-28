@@ -1,5 +1,6 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { registerUser } from "../../methods/actions";
 
@@ -8,10 +9,14 @@ import Nav from "../../reusables/nav";
 import Input from "../../reusables/input";
 import Button from "../../reusables/button";
 import { validateemail } from "../../reusables/helper";
+import Loader from "../../reusables/loader";
+
+//import styles
 import "./index.css";
 
 const SignUp = () => {
   let dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const [firstName, setFirstName] = useState("");
   const [firstNameErr, setFirstNameErr] = useState("");
@@ -21,6 +26,9 @@ const SignUp = () => {
   const [emailErr, setEmailErr] = useState("");
   const [password, setPassword] = useState("");
   const [passwordErr, setPasswordErr] = useState("");
+
+  const creatingUser = useSelector((state) => state.LoaderReducer.creatingUser);
+  const created = useSelector((state) => state.UserReducer.created);
 
   const handleSignUp = (e) => {
     e.preventDefault();
@@ -63,6 +71,12 @@ const SignUp = () => {
     }
   };
 
+  useEffect(() => {
+    if (created) {
+      navigate("/");
+    }
+  }, [created]);
+
   return (
     <div>
       <Nav />
@@ -100,11 +114,16 @@ const SignUp = () => {
                 errMsg={passwordErr}
               />
 
-              <Button
-                type="primary-button mt-3"
-                onClick={(e) => handleSignUp(e)}
-                title="Sign Up"
-              />
+              {creatingUser ? (
+                <Button type="primary-button" title={<Loader />} />
+              ) : (
+                <Button
+                  type="primary-button mt-3"
+                  onClick={(e) => handleSignUp(e)}
+                  title="Sign Up"
+                />
+              )}
+
               <p className="t-center mt-3 mb-3"> or</p>
               <Button
                 type="secondary-button"

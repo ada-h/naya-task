@@ -1,4 +1,6 @@
 import { useRef, useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+
 import "./index.css";
 
 const Canvas = () => {
@@ -6,12 +8,14 @@ const Canvas = () => {
   const contextRef = useRef(null);
   const [drawing, setDrawingStatus] = useState(false);
 
-  const onMouseUp = () => {
+  const user = useSelector((state) => state.UserReducer.user);
+
+  const stopDrawing = () => {
     contextRef.current.closePath();
     setDrawingStatus(false);
   };
 
-  const onMouseDown = ({ nativeEvent }) => {
+  const startDrawing = ({ nativeEvent }) => {
     const { offsetX, offsetY } = nativeEvent;
     contextRef.current.beginPath();
     contextRef.current.moveTo(offsetX, offsetY);
@@ -38,7 +42,7 @@ const Canvas = () => {
     const context = canvas.getContext("2d");
     context.scale(2, 2);
     context.lineCap = "round";
-    context.strokeStyle = "black";
+    context.strokeStyle = user.color;
     context.lineWidth = 2;
     contextRef.current = context;
   }, []);
@@ -46,8 +50,8 @@ const Canvas = () => {
   return (
     <canvas
       className="board"
-      onMouseDown={onMouseDown}
-      onMouseUp={onMouseUp}
+      onMouseDown={startDrawing}
+      onMouseUp={stopDrawing}
       onMouseMove={draw}
       ref={canvasRef}
     >
