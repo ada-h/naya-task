@@ -1,5 +1,7 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { registerUser } from "../../methods/actions";
 
 //Components
 import Nav from "../../reusables/nav";
@@ -9,6 +11,8 @@ import { validateemail } from "../../reusables/helper";
 import "./index.css";
 
 const SignUp = () => {
+  let dispatch = useDispatch();
+
   const [firstName, setFirstName] = useState("");
   const [firstNameErr, setFirstNameErr] = useState("");
   const [lastName, setLastName] = useState("");
@@ -39,6 +43,23 @@ const SignUp = () => {
       setPasswordErr("Please enter your password");
     } else {
       setPasswordErr("");
+    }
+
+    if (
+      password &&
+      lastName &&
+      firstName &&
+      email &&
+      validateemail(email) &&
+      password
+    ) {
+      let data = {
+        firstname: firstName,
+        lastname: lastName,
+        email: email,
+        password: password,
+      };
+      dispatch(registerUser(data));
     }
   };
 

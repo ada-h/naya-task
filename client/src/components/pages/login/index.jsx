@@ -1,20 +1,31 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+
 import { Link } from "react-router-dom";
+import { logInUser } from "../../methods/actions";
 
 //Components
 import Nav from "../../reusables/nav";
 import Input from "../../reusables/input";
 import Button from "../../reusables/button";
+import Loader from "../../reusables/loader";
 
 import { validateemail } from "../../reusables/helper";
 
 import "./index.css";
 
 const Login = () => {
+  let dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
   const [emailErr, setEmailErr] = useState("");
   const [password, setPassword] = useState("");
   const [passwordErr, setPasswordErr] = useState("");
+
+  const loggingUser = useSelector((state) => state.LoaderReducer.loggingUser);
+  const auth = useSelector((state) => state.UserReducer.auth);
 
   const handleLogIn = (e) => {
     e.preventDefault();
@@ -28,7 +39,20 @@ const Login = () => {
     } else {
       setPasswordErr("");
     }
+    if (email && validateemail(email) && password) {
+      let data = {
+        email: email,
+        password: password,
+      };
+      dispatch(logInUser(data));
+    }
   };
+
+  useEffect(() => {
+    if (auth) {
+      navigate("/board");
+    }
+  }, [auth]);
 
   return (
     <div>
@@ -58,11 +82,16 @@ const Login = () => {
                 {" "}
                 Forgot password?
               </p>
-              <Button
-                type="primary-button"
-                title="Log In"
-                onClick={(e) => handleLogIn(e)}
-              />
+              {loggingUser ? (
+                <Button type="primary-button" title={<Loader />} />
+              ) : (
+                <Button
+                  type="primary-button"
+                  title="Log In"
+                  onClick={(e) => handleLogIn(e)}
+                />
+              )}
+
               <p className="t-12 t-center mt-3 mb-3">
                 {" "}
                 Don't have an account?{" "}

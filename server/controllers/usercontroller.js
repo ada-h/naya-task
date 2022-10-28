@@ -49,9 +49,14 @@ module.exports = {
             error: err,
           });
         }
-        return res
-          .status(201)
-          .json({ message: "User has been created successfully", data: User });
+        return res.status(201).json({
+          message: "User has been created successfully",
+          data: {
+            firstname: req.body.firstname,
+            lastname: req.body.lastname,
+            email: req.body.email,
+          },
+        });
       });
     } catch (error) {
       return res.status(500).json({
@@ -68,9 +73,12 @@ module.exports = {
       return res.status(400).json({ message: "Password is required" });
 
     try {
-      let user = await UserModel.findOne({
-        email: req.body.email.trim().toLowerCase(),
-      }).exec();
+      let user = await UserModel.findOne(
+        {
+          email: req.body.email.trim().toLowerCase(),
+        },
+        "+password"
+      ).exec();
 
       if (!user) {
         return res.status(404).json({
@@ -101,11 +109,17 @@ module.exports = {
             expiresIn: 86400000 * 30, // expires in 30 days
           }
         );
+
+        //Returning the user data without password
+        let returneduser = await UserModel.findOne({
+          email: req.body.email.trim().toLowerCase(),
+        }).exec();
+
         return res.status(200).json({
           success: true,
           message: "Login successful!",
           token: token,
-          data: user,
+          data: returneduser,
         });
       }
     } catch (error) {
